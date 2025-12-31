@@ -6,14 +6,14 @@ Checklist ini digunakan untuk memastikan aplikasi **.NET (Minimal API + Clean Ar
 
 ## 🔐 1. Security
 
-- [ ] HTTPS only (HSTS aktif di production)
-- [ ] Secrets via Environment / Secret Manager (❌ hardcode)
+- [x] HTTPS only (HSTS aktif di production)
+- [x] Secrets via Environment / Secret Manager (❌ hardcode)
 - [ ] JWT / OAuth2 authentication
   - [ ] Token expiry
   - [ ] Refresh token
 - [ ] Role-based authorization
 - [ ] Policy-based authorization
-- [ ] CORS restrictif (origin spesifik)
+- [x] CORS restrictif (origin spesifik)
 - [ ] Rate limiting (IP / user-based)
 - [ ] Input validation (FluentValidation)
 - [ ] SQL Injection safe (EF Core parameterized query)
@@ -65,8 +65,13 @@ Checklist ini digunakan untuk memastikan aplikasi **.NET (Minimal API + Clean Ar
 - [ ] No unbounded query
 - [ ] AsNoTracking for read queries
 - [ ] Avoid N+1 query
-- [ ] Kestrel & thread pool tuning
-- [ ] Timeout setting configured
+- [x] Kestrel configured explicitly
+- [x] Server header disabled
+- [x] Request size limit configured
+- [x] Request timeout configured
+- [x] HTTPS redirection enabled
+- [x] HSTS enabled (production)
+- [ ] HTTP/2 enabled (optional)
 
 ---
 
@@ -161,7 +166,7 @@ Checklist ini digunakan untuk memastikan aplikasi **.NET (Minimal API + Clean Ar
 
 Aplikasi **boleh go-live** jika minimal memenuhi:
 
-- [ ] HTTPS enabled
+- [x] HTTPS enabled
 - [ ] Global exception handling
 - [ ] Authentication & authorization
 - [ ] Logging + correlation ID

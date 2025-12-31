@@ -1,0 +1,7 @@
+﻿services:
+  dotnetca:
+    image: dotnetca
+    build:
+      context: .
+      dockerfile: DotnetCA/Dockerfile
+

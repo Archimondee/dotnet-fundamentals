@@ -1,6 +1,7 @@
 using DotnetCA.Api.Extensions;
 using DotnetCA.Application;
 using DotnetCA.Application.Common.Models;
+using DotnetCA.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,7 @@ builder.Services.AddHsts(options =>
     options.Preload = true;
 });
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();

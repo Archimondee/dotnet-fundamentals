@@ -28,16 +28,20 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
             .HasDefaultValueSql("NOW()");
 
         builder.Property(x => x.UpdatedAt)
-            .HasColumnName("updated_at");
+            .HasColumnName("updated_at")
+            .IsRequired(false);
 
         builder.Property(x => x.DeletedAt)
-            .HasColumnName("deleted_at");
+            .HasColumnName("deleted_at")
+            .IsRequired(false);
 
         builder.Property(x => x.RoleId)
-            .HasColumnName("role_id");
+            .HasColumnName("role_id")
+            .IsRequired(false);
 
         builder.HasOne(x => x.Role)
             .WithMany()
-            .HasForeignKey(x => x.RoleId);
+            .HasForeignKey(x => x.RoleId)
+            .IsRequired(false);
     }
 }

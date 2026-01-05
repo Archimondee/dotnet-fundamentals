@@ -9,18 +9,25 @@ public sealed class RoleConfiguration : IEntityTypeConfiguration<Role>
     public void Configure(EntityTypeBuilder<Role> builder)
     {
         builder.ToTable("roles");
-        
+
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.RoleName)
             .HasColumnName("role_name")
-            .HasMaxLength(50)
-            .IsRequired();
+            .HasMaxLength(50);
 
         builder.HasIndex(x => x.RoleName).IsUnique();
 
         builder.Property(x => x.CreatedAt)
             .HasColumnName("created_at")
-            .HasDefaultValueSql("NOW()");
+            .HasDefaultValueSql("NOW()").IsRequired(false);
+
+        builder.Property(x => x.UpdatedAt)
+            .HasColumnName("updated_at")
+            .HasDefaultValueSql("NOW()").IsRequired(false);
+
+        builder.Property(x => x.DeletedAt)
+            .HasColumnName("deleted_at")
+            .HasDefaultValueSql("NOW()").IsRequired(false);
     }
 }

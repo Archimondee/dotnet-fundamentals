@@ -1,4 +1,6 @@
 using DotnetCA.Api.Extensions;
+using DotnetCA.Application;
+using DotnetCA.Application.Common.Exceptions;
 using DotnetCA.Application.Common.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -26,8 +28,11 @@ builder.Services.AddHsts(options =>
     options.IncludeSubDomains = true;
     options.Preload = true;
 });
+builder.Services.AddApplication();
 
 var app = builder.Build();
+
+app.UseMiddleware<ValidationMiddleware>();
 
 if (!app.Environment.IsDevelopment())
 {

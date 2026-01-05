@@ -1,9 +1,9 @@
 using DotnetCA.Api.Extensions;
 using DotnetCA.Application;
-using DotnetCA.Application.Common.Exceptions;
 using DotnetCA.Application.Common.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 ThreadPool.SetMinThreads(
@@ -29,6 +29,7 @@ builder.Services.AddHsts(options =>
     options.Preload = true;
 });
 builder.Services.AddApplication();
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 

@@ -15,7 +15,7 @@ Checklist ini digunakan untuk memastikan aplikasi **.NET (Minimal API + Clean Ar
 - [ ] Policy-based authorization
 - [x] CORS restrictif (origin spesifik)
 - [ ] Rate limiting (IP / user-based)
-- [ ] Input validation (FluentValidation)
+- [x] Input validation (FluentValidation)
 - [ ] SQL Injection safe (EF Core parameterized query)
 - [ ] Detailed error disabled di production
 - [ ] Security headers
@@ -28,8 +28,8 @@ Checklist ini digunakan untuk memastikan aplikasi **.NET (Minimal API + Clean Ar
 
 ## 🧱 2. Architecture & Code Quality
 
-- [ ] Clean Architecture enforced
-  - [ ] Domain ❌ tidak depend ke Infrastructure
+- [x] Clean Architecture enforced
+  - [x] Domain ❌ tidak depend ke Infrastructure
 - [ ] CQRS separation (Command ≠ Query)
 - [ ] No DbContext di Controller / Endpoint
 - [ ] Use Case / Application Service only

@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>NetCa.Domain</RootNamespace>
-    <AssemblyName>NetCa.Domain</AssemblyName>
+    <RootNamespace>DotnetCA.Domain</RootNamespace>
+    <AssemblyName>DotnetCA.Domain</AssemblyName>
   </PropertyGroup>
+
+  
 
 </Project>
